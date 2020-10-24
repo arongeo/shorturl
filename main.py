@@ -15,7 +15,6 @@ def make_link(link):
         origin_file = open("example").read()
         final_text = origin_file.replace("example", link)
 
-        # with this we have 57 716 368 416 possible url combinations
         random_id = make_random_id(5)
         final_link = random_id + ".html"
         if paths.exists("templates/"+final_link) == True:
