@@ -35,7 +35,7 @@ def make_link(link):
         result_file.write(final_text)
         return final_final_link
     else:
-        return "Invalid URL"
+        return "invalid"
 
 app = Flask(__name__)
 app.secret_key = ""
@@ -45,7 +45,10 @@ def home():
     if request.method == "POST":
         link = request.form["url"]
         short_link = make_link(link)
-        flash("Short URL: " + short_link)
+        if short_link == "invalid":
+            flash("Invalid URL")
+        else:
+            flash("Short URL: " + short_link)
     return render_template("index.html")
 
 @app.route("/<path:path>", methods=["GET"])
