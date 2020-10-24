@@ -53,6 +53,12 @@ def home():
 @app.route("/<path:path>", methods=["GET"])
 def render_redirect(path):
     does_exist = paths.exists("templates/"+path)
+    if does_exist == False:
+        does_exist = paths.exists("templates/"+path+".html")
+        if does_exist == True:
+            path = path+".html"
+
+    print(str(does_exist), file=sys.stderr)
 
     if does_exist == True:
         return render_template(path[0:])
@@ -60,4 +66,4 @@ def render_redirect(path):
         return render_template("404.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
