@@ -52,8 +52,6 @@ def home():
 def render_redirect(path):
     does_exist = paths.exists("templates/"+path)
 
-    print(str(does_exist), file=sys.stderr)
-
     if does_exist == True:
         return render_template(path[0:])
     else:
