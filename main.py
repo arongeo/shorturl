@@ -25,14 +25,13 @@ def make_link(link):
                 final_link = random_id + ".html"
                 if paths.exists("templates/"+final_link) == True:
                     random_id = make_random_id(6)
-                    final_link = random_id + ".html"
             
 
-        final_final_link = "http://127.0.0.1:5000/" + final_link
+        final_link = "127.0.0.1:5000/" + random_id
 
-        result_file = open("templates/" + final_link, "w")
+        result_file = open("templates/" + random_id + ".html", "w")
         result_file.write(final_text)
-        return final_final_link
+        return final_link
     else:
         return "invalid"
 
