@@ -16,14 +16,11 @@ def make_link(link):
         final_text = origin_file.replace("example", link)
 
         random_id = make_random_id(5)
-        final_link = random_id + ".html"
-        if paths.exists("templates/"+final_link) == True:
+        if paths.exists("templates/"+random_id+".html") == True:
             random_id = make_random_id(5)
-            final_link = random_id + ".html"
-            if paths.exists("templates/"+final_link) == True:
+            if paths.exists("templates/"+random_id+".html") == True:
                 random_id = make_random_id(6)
-                final_link = random_id + ".html"
-                if paths.exists("templates/"+final_link) == True:
+                if paths.exists("templates/"+random_id+".html") == True:
                     random_id = make_random_id(6)
             
 
