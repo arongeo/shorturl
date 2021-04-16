@@ -23,7 +23,6 @@ def make_link(link):
                 if paths.exists("templates/"+random_id+".html") == True:
                     random_id = make_random_id(6)
             
-
         final_link = "127.0.0.1:5000/" + random_id
 
         result_file = open("templates/" + random_id + ".html", "w")
