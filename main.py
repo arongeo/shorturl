@@ -1,7 +1,7 @@
 import string
 import random
 import os.path as paths
-from flask import *
+from flask import Flask, request, flash, render_template
 import sys
 
 
